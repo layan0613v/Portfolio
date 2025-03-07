@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layan's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="2.png" class="logo"> <!-- change size -->
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Medical Student</p>
+            <h1>Hi, I'm <span>Layan Al-Amir</span></h1>
+            <p>Tech Enthusiast | Designer | Video Editor</p>
+        </div>
+    </div>
+</div>
+
+<!----------------------about-------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Layan-pic.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>An enthusiastic second-year medical student who's eager to apply academic knowledge and hands-on clinical experiences in various professional environments. 
+                Seeking opportunities to collaborate effectively, enhance problem-solving skills, and contribute positively while pursuing continuous learning and personal growth.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        <li><span>Data Analysis</span><br>Python Developer</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2020-current</span><br>Volunteering With Nahno</li>
+                        <li><span>2024-current</span><br>Volunteering With Dopamine Scientific Team</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2023-current</span><br>Medical Student @ JU</li>
+                        <li><span>2021</span><br>CS50: Introduction to Computer Science, Python, C</li>
+                        <li><span>2025</span><br>Blender 3D course - NCSS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------------portfolio----------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="blend.png">
+                <div class="layer">
+                    <h3>Blender 3D Models</h3>
+                    <p>...describtion...</p>
+                    <a href="https://drive.google.com/drive/folders/1OuwNmhNT689bU1I_5TxMomtu6q2P5Unj?usp=drive_link"target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="website.png">
+                <div class="layer">
+                    <h3>Websites</h3>
+                    <p>...describtion...</p>
+                    <a href="https://drive.google.com/drive/folders/1Q0X4hXCZmzadrsKkceQoPqsOlZqg68-G?usp=sharing"target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="vided.png">
+                <div class="layer">
+                    <h3>Video Editing</h3>
+                    <p>...describtion...</p>
+                    <a href="https://drive.google.com/drive/folders/1PugHQWhZBrRoshby7xq1Ye32ImZGHmQM?usp=sharing"target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="research.png">
+                <div class="layer">
+                    <h3>Research</h3>
+                    <p>...describtion...</p>
+                    <a href="https://drive.google.com/drive/folders/1l8cBfrqegWGC6DVXBU3lqVWNXWNFTAqk?usp=sharing"target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a href="https://drive.google.com/drive/folders/16qJZA46MRlS43zH2BFTwzGvICv9H5WCH?usp=sharing"target="_blank" rel="noopener noreferrer" class="btn">See more</a>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+        sidemenu.style.right="-200px";
+    }
+
+</script>
+
+</body>
+</html>
